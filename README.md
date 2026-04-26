@@ -112,7 +112,7 @@
 
 **1. True Net ADR Comparison (Direct vs OTA)**
 * **เป้าหมาย:** เปรียบเทียบรายได้สุทธิต่อการจองหลังจากหักต้นทุนแฝงทั้งหมด (ค่าคอมมิชชัน + ค่าโฆษณา)
-* **การนำเสนอ:** Bar Chart เปรียบเทียบค่าเฉลี่ย
+* **การนำเสนอ:** เลือกใช้ Stacked Bar Chart เพราะสามารถแสดงรายได้รวมและค่า commission ไปพร้อมกัน ทำให้เปรียบเทียบรายได้ของแต่ละช่องทางได้ทันที 
 <img width="984" height="584" alt="image" src="https://github.com/user-attachments/assets/bdeca9c0-22cf-4791-a77e-cdfe7dc7e3ab" />
 
 **2. Final Net Profit by Channel**
