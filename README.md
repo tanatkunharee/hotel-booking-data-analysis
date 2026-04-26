@@ -1,6 +1,6 @@
-# 📊 CP372 Data Analytics Project 📊
+# CP372 Data Analytics Project
 
-## Azure Stay: Strategic Distribution & Profit Optimization 🏨
+## Azure Stay: Strategic Distribution & Profit Optimization
 
 การวิเคราะห์เพื่อเพิ่มประสิทธิภาพช่องทางการจัดจำหน่ายและเพิ่มกำไรสุทธิสูงสุดให้กับธุรกิจโรงแรม
 
@@ -8,38 +8,38 @@
 
 ---
 
-## สมาชิกกลุ่ม 👥
+## สมาชิกกลุ่ม
 * **6610201013** ณัฐวุฒิ เคลือบทอง
 * **66102010142** ธนัท กันหารี
 * **66102010571** อนันตสิน ลาภวิสุทธิสาโรจน์
 
 ---
 
-## Problem Statement 📌
+## Problem Statement
 โรงแรม **Azure Stay** กำลังเผชิญกับภาวะ **“รายได้สูง แต่กำไรสุทธิต่ำ” (Profit Margin Erosion)** แม้จะมียอดจอง (Volume) เข้ามาอย่างต่อเนื่อง แต่ธุรกิจต้องสูญเสียรายได้ไปกับ "ต้นทุนแฝง" จำนวนมหาศาล ได้แก่ ค่าคอมมิชชันจากตัวแทนขายออนไลน์ (OTAs) ที่สูงถึง 15-20% และค่าใช้จ่ายทางการตลาด (Marketing Spend) ในช่องทาง Direct Web โครงการนี้จึงมุ่งเน้นการวิเคราะห์ Data เพื่อค้นหาช่องทางที่สร้างกำไรสุทธิ (Net Profit) อย่างแท้จริง และอุดรอยรั่วไหลของรายได้จากการยกเลิกห้องพัก (Revenue Leakage)
 
-## SMART Objectives 🎯
+## SMART Objectives
 - **S (Specific):** ปรับสัดส่วนช่องทางการจัดจำหน่ายห้องพักโดยเพิ่มการเข้าพักที่มีคุณภาพและลดต้นทุนแฝง
 - **M (Measurable):** เพิ่ม Net RevPAR 10% และ ลดค่า Commission & Marketing รวมกัน 15%
 - **A (Achievable):** ทำ Customer Segmentation ตามช่วงเวลา (Weekday/Weekend) และปรับนโยบายราคา (Rate Code) เพื่อป้องกันการยกเลิกห้อง
 - **R (Relevant):** ลดการพึ่งพา OTA สร้างฐานลูกค้าประจำ (Direct Booking) เพื่อเพิ่มอัตรากำไรสุทธิสูงสุด
 - **T (Time-bound):** วัดผลการเปลี่ยนแปลงและบรรลุเป้าหมายภายใน 1 ไตรมาส (3 เดือน)
 
-## Analytical Questions ❓
+## Analytical Questions
 - ช่องทางการจองใดที่สร้าง "กำไรสุทธิต่อการจอง" (True Net ADR) สูงที่สุดเมื่อหักต้นทุนทั้งหมดแล้ว?
 - โมเดลการคิดค่าคอมมิชชันแบบใด (Flat Fee vs Percentage) ส่งผลกระทบต่อต้นทุนของโรงแรมมากกว่ากัน?
 - พฤติกรรมการเข้าพักในวันธรรมดา (Mon-Fri) และวันหยุด (Sat-Sun) ส่งผลต่อยอดจองและกำไรของแต่ละช่องทางอย่างไร?
 - อัตราการยกเลิก (Cancellation Rate) ของแต่ละช่องทางส่งผลให้เกิดค่าเสียโอกาส (Opportunity Cost) มากน้อยเพียงใด?
 - นโยบายราคา (Rate Code) ประเภทใดที่เป็นต้นเหตุหลักของการกั๊กห้องพักและการยกเลิก?
 
-## Hypothesis 👩‍🔬
+## Hypothesis
 1. **Hypothesis 1:** ช่องทาง Direct Web ให้รายได้สุทธิต่อการจอง (True Net ADR) สูงกว่า OTA แม้จะต้องแบกรับต้นทุนค่าโฆษณา (Marketing Spend) เองก็ตาม
 2. **Hypothesis 2:** โมเดลค่าคอมมิชชันแบบ Flat Fee มีสัดส่วนต้นทุนต่อรายได้ (Cost %) ที่คุ้มค่ากว่าแบบ Percentage
 3. **Hypothesis 3:** พฤติกรรมการเข้าพักในวันธรรมดาและวันหยุด มีผลต่อการเลือกช่องทางการจองและความสามารถในการทำกำไร (Net ADR) ที่แตกต่างกันอย่างมีนัยสำคัญ
 
 ---
 
-## Data Dictionary 📒 (โครงสร้างแบบ Star Schema)
+## Data Dictionary (โครงสร้างแบบ Star Schema)
 
 | Table | Attribute | Description | Data Type | Example |
 |---|---|---|---|---|
@@ -57,7 +57,7 @@
 
 ---
 
-## Data Preparation & Cleansing 🔎
+## Data Preparation & Cleansing 
 - **Data Integration:** เชื่อมต่อข้อมูล (Merge) ตาราง `fact_bookings` กับ `dim_channels` และ `dim_rate_codes` แบบ Star Schema
 - **Remove Financial Noise:** ตั้งค่า `calculated_net_revenue` ของบุ๊กกิ้งที่มีสถานะ **Cancelled ให้เป็น 0** เพื่อป้องกันตัวเลขรายได้พองโตเกินจริง (Overstated Revenue)
 - **Opportunity Cost Calculation:** สร้างคอลัมน์เก็บมูลค่าความเสียหายจากห้องที่ถูกยกเลิก เพื่อวัดขนาดของ Revenue Leakage
@@ -66,7 +66,7 @@
 
 ---
 
-## Exploratory Data Analysis (EDA) 📈
+## Exploratory Data Analysis (EDA) 
 
 **1. True Net ADR Comparison (Direct vs OTA)**
 * **เป้าหมาย:** เปรียบเทียบรายได้สุทธิต่อการจองหลังจากหักต้นทุนแฝงทั้งหมด (ค่าคอมมิชชัน + ค่าโฆษณา)
@@ -90,7 +90,7 @@
 
 ---
 
-## Findings and Insights 💡
+## Findings and Insights 
 
 จากการวิเคราะห์ข้อมูล เราพบประเด็นสำคัญที่ส่งผลกระทบต่อกำไรสุทธิของโรงแรม Azure Stay ดังนี้:
 
@@ -105,7 +105,7 @@
 
 ---
 
-## Actionable Recommendations ✅
+## Actionable Recommendations
 
 เพื่อแก้ไขปัญหาและเพิ่มประสิทธิภาพตาม SMART Objectives กลุ่มเรามีข้อเสนอแนะเชิงกลยุทธ์ดังนี้:
 
