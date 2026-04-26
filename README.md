@@ -33,9 +33,20 @@
 - นโยบายราคา (Rate Code) ประเภทใดที่เป็นต้นเหตุหลักของการกั๊กห้องพักและการยกเลิก?
 
 ## Hypothesis
-1. **Hypothesis 1:** ช่องทาง Direct Web ให้รายได้สุทธิต่อการจอง (True Net ADR) สูงกว่า OTA แม้จะต้องแบกรับต้นทุนค่าโฆษณา (Marketing Spend) เองก็ตาม
-2. **Hypothesis 2:** โมเดลค่าคอมมิชชันแบบ Flat Fee มีสัดส่วนต้นทุนต่อรายได้ (Cost %) ที่คุ้มค่ากว่าแบบ Percentage
-3. **Hypothesis 3:** พฤติกรรมการเข้าพักในวันธรรมดาและวันหยุด มีผลต่อการเลือกช่องทางการจองและความสามารถในการทำกำไร (Net ADR) ที่แตกต่างกันอย่างมีนัยสำคัญ
+### 1. Hypothesis 1: ช่องทาง Direct Web ให้รายได้สุทธิต่อการจอง (True Net ADR) สูงกว่า OTA แม้จะต้องแบกรับต้นทุนค่าโฆษณา (Marketing Spend) เองก็ตาม
+* **What to explore:** ต้องการเปรียบเทียบว่าช่องทางการขายช่องทางใดสร้างรายได้สุทธิต่อการจองได้สูงกว่าหลังจากหักค่า commission และ marketing เพื่อประเมินประสิทธิภาพเชิงกำไรของแต่ละช่องทาง
+* **Why this chart is appropriate:** ใช้ Bar Chart เนื่องจากเหมาะสำหรับการเปรียบเทียบค่าระหว่างกลุ่มอย่างชัดเจน ทำให้เห็นความแตกต่างของ Net ADR ระหว่างแต่ละ channel ได้ทันที และช่วยให้ตีความได้ง่ายจากความสูงของแท่งกราฟ
+<img width="715" height="492" alt="image" src="https://github.com/user-attachments/assets/616822b7-4b44-4be8-9131-1af63c1d3582" />
+
+### 2. Hypothesis 2: โมเดลค่าคอมมิชชันแบบ Flat Fee มีสัดส่วนต้นทุนต่อรายได้ (Cost %) ที่คุ้มค่ากว่าแบบ Percentage
+* **What to explore:** วิเคราะห์ว่า Model ค่าคอมมิชชั่นแบบ Flat Fee และ Percentage มีสัดส่วนต้นทุนต่อรายได้ แตกต่างกันอย่างไร เพื่อเข้าใจว่า Model ใดมี impact ต่อรายได้มากกว่า
+* **Why this chart is appropriate:** ใช้ Bar chart เพื่อเปรียบเทียบสัดส่วนระหว่าง Model ทำให้เห็นชัดว่า Model ใดมีต้นทุนสูงกว่ากันเมื่อเทียบกับรายได้รวม
+<img width="784" height="483" alt="image" src="https://github.com/user-attachments/assets/2ef06c78-66c8-4537-adf6-3fe4eb149956" />
+
+### 3. Hypothesis 3: พฤติกรรมการเข้าพักในวันธรรมดาและวันหยุด มีผลต่อการเลือกช่องทางการจองและความสามารถในการทำกำไร (Net ADR) ที่แตกต่างกันอย่างมีนัยสำคัญ
+* **What to explore:** ต้องการวิเคราะห์พฤติกรรมการเข้าพักระหว่าง "วันธรรมดา" และ "วันหยุด" ว่ามีความแตกต่างกันอย่างไร ทั้งในปริมาณการจองผ่านแต่ละช่องทาง และความสามารถในการทำกำไรต่อห้อง เพื่อใช้เป็นแนวทางในแบ่งกลุ่มลูกค้า
+* **Why this chart is appropriate:** ใช้ Bar Chart 2 กราฟควบคู่กัน โดยกราฟแรกแสดงปริมาณการจอง (Volume) และกราฟที่สองแสดงความสามารถในการทำกำไรสุทธิ (Net ADR) ทำให้สามารถวิเคราะห์ได้ทั้งเชิงปริมาณและมูลค่าพร้อมกันอย่างครบถ้วน
+<img width="1783" height="584" alt="Hypothesis 3 Weekend vs Weekday Performance" src="https://github.com/user-attachments/assets/b4877af3-557c-4610-8fe0-07c7c2abcb68" />
 
 ---
 
@@ -71,22 +82,22 @@
 **1. True Net ADR Comparison (Direct vs OTA)**
 * **เป้าหมาย:** เปรียบเทียบรายได้สุทธิต่อการจองหลังจากหักต้นทุนแฝงทั้งหมด (ค่าคอมมิชชัน + ค่าโฆษณา)
 * **การนำเสนอ:** Bar Chart เปรียบเทียบค่าเฉลี่ย
-*[ใส่รูปภาพกราฟ EDA 1 ของคุณ]*
+<img width="984" height="584" alt="image" src="https://github.com/user-attachments/assets/bdeca9c0-22cf-4791-a77e-cdfe7dc7e3ab" />
 
 **2. Final Net Profit by Channel**
 * **เป้าหมาย:** วิเคราะห์หา "ผู้ชนะ" ในเชิงกำไรสุทธิรวม (Contribution Margin) หลังจากหักต้นทุนผันแปรทั้งหมด
 * **การนำเสนอ:** Sorted Bar Chart (เรียงลำดับจากมากไปน้อย)
-*[ใส่รูปภาพกราฟ EDA 2 ของคุณ]*
+<img width="984" height="584" alt="image" src="https://github.com/user-attachments/assets/f753ac54-d8cc-4a00-9bd0-563f573eb8e0" />
 
 **3. High Cancellation Channels (Cancellation Impact)**
 * **เป้าหมาย:** ระบุช่องทางที่มีความเสี่ยงสูง (High-Risk) จากอัตราการยกเลิก (Cancellation Rate) และมูลค่าที่สูญเสียไป
 * **การนำเสนอ:** Side-by-side Bar Chart (กราฟคู่ % ความเสี่ยง และ มูลค่าความเสียหาย)
-*[ใส่รูปภาพกราฟ EDA 3 ของคุณ]*
+<img width="984" height="584" alt="image" src="https://github.com/user-attachments/assets/cf2b36fb-ab05-4b65-88dd-4391b9875d8a" />
 
 **4. Booking Volume and Quality by Channel**
 * **เป้าหมาย:** ตรวจสอบ "คุณภาพของการจอง" โดยเปรียบเทียบสัดส่วนการเข้าพักสำเร็จ (Checked-Out) เทียบกับการจองที่ถูกยกเลิก (Cancelled)
 * **การนำเสนอ:** Grouped Bar Chart
-*[ใส่รูปภาพกราฟ EDA 4 ของคุณ]*
+<img width="1184" height="684" alt="image" src="https://github.com/user-attachments/assets/91dcf2d1-5458-47bd-832c-0377ba32b768" />
 
 ---
 
@@ -96,12 +107,15 @@
 
 **1. The Profit Gap (ยอดขายรวม vs กำไรที่แท้จริง)**
 แม้ช่องทาง Direct Web จะดูเหมือนมีต้นทุนคอมมิชชันเป็น 0% แต่งบการตลาดที่สูงลิ่วทำให้กำไรสุทธิ (Net Profit) หดตัวอย่างรุนแรง ในขณะเดียวกัน ฝั่ง OTA ยักษ์ใหญ่ที่สร้างยอดจองมหาศาล ก็ดึงผลกำไรออกไปในรูปแบบของค่าคอมมิชชันที่สูงถึง 15-20%
+<img width="1184" height="683" alt="image" src="https://github.com/user-attachments/assets/e361fb52-3545-449c-b615-1f110330c37e" />
 
 **2. The Promotional Cancellation Trap (หลุมพรางราคาโปรโมชัน)**
 พบความผิดปกติพฤติกรรมลูกค้ากลุ่มที่ใช้ Rate Code แบบ **"Promotional"** ซึ่งดึงดูดกลุ่ม Serial Cancellers (จองกั๊กแล้วยกเลิก) ทำให้มี Cancellation Rate สูงทะลุ **24.5%** ซึ่งสูงกว่าราคาประเภทอื่นๆ อย่างชัดเจน สร้างค่าเสียโอกาส (Opportunity Cost) มหาศาล
+<img width="976" height="583" alt="image" src="https://github.com/user-attachments/assets/2b6fb6ef-cf31-4e0a-ae22-6bb6eb1014f5" />
 
 **3. Booking Quality & Direct Value (คุณภาพที่ซ่อนอยู่ในการจองตรงและ B2B)**
 เมื่อเปรียบเทียบคุณภาพการจอง พบว่าลูกค้าที่จองผ่าน **Direct Web** มีอัตราการยกเลิกต่ำที่สุดเพียง **6.5%** รวมถึงกลุ่ม **Corporate Rate และ Wholesale (B2B)** ที่มียอดการยกเลิกต่ำและมีความเสถียรของการเข้าพัก (โดยเฉพาะในวันธรรมดา) ทำให้มั่นใจได้ว่าเป็นกลุ่มลูกค้าที่มี High-Intent อย่างแท้จริง
+<img width="1181" height="683" alt="image" src="https://github.com/user-attachments/assets/ac994764-ec5a-4e7f-a1ec-69961ac706f0" />
 
 ---
 
